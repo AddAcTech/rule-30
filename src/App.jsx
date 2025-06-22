@@ -65,13 +65,19 @@ function App() {
     canvas.width = width * cellSize;
     canvas.height = height * cellSize;
 
-    ctx.fillStyle = '#ffffff';
+    ctx.fillStyle = '#909090';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+    // Dibujar las celdas en negro
     ctx.fillStyle = '#000000';
     result.forEach((row, y) => {
       row.forEach((cell, x) => {
         if (cell === 1) {
+          if (x === Math.floor(width / 2)) {
+            ctx.fillStyle = '#01C9A0'; // Azul cielo para la columna central
+          } else {
+            ctx.fillStyle = '#000000'; // Negro para el resto
+          }
           ctx.fillRect(x * cellSize, y * cellSize, cellSize, cellSize);
         }
       });
@@ -94,11 +100,13 @@ function App() {
           value={iterations}
           onChange={(e) => setIterations(Number(e.target.value))}
           min="1"
-          max="10000"
+          max="1000"
           className="w-32 p-2 border rounded"
         />
       </div>
-      <canvas id="rule30-canvas" className="border rounded mb-4"></canvas>
+      <div className="canvas-container">
+        <canvas id="rule30-canvas" className="border rounded mb-4"></canvas>
+      </div>
       <div className="bg-gray-100 p-4 rounded">
         <h2 className="text-xl font-semibold mb-2">Columna Central:</h2>
         <p className="whitespace-pre-wrap">{centralColumn}</p>
