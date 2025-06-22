@@ -86,7 +86,7 @@ function App() {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4">Regla 30 de Wolfram</h1>
+      <h1 className="text-3xl font-bold mb-4">Regla 30 de Wolfram (Aguilar Chavez Alexis Daniel)</h1>
       
       <Rule30Rules />
 
@@ -105,11 +105,11 @@ function App() {
         />
       </div>
       <div className="canvas-container">
-        <canvas id="rule30-canvas" className="border rounded mb-4"></canvas>
+        <canvas id="rule30-canvas"></canvas>
       </div>
-      <div className="bg-gray-100 p-4 rounded">
+      <div className="central-column">
         <h2 className="text-xl font-semibold mb-2">Columna Central:</h2>
-        <p className="whitespace-pre-wrap">{centralColumn}</p>
+        <p>{centralColumn}</p>
       </div>
     </div>
   );
