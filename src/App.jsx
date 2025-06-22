@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import Rule30Rules from './components/Rule30Rules';
 
 function App() {
   const [iterations, setIterations] = useState(100);
@@ -81,96 +82,7 @@ function App() {
     <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold mb-4">Regla 30 de Wolfram</h1>
       
-      <div className="bg-blue-50 p-6 rounded-lg mb-6">
-        <h2 className="text-xl font-semibold mb-3">Reglas de la Regla 30</h2>
-        <div className="grid grid-cols-4 gap-4">
-          <div className="text-center">
-            <div className="bg-white rounded-full w-12 h-6 flex items-center justify-center mb-2">
-              <span className="text-xl">0</span>
-            </div>
-            <div className="flex justify-center space-x-1">
-              <span className="text-xl">0</span>
-              <span className="text-xl">0</span>
-              <span className="text-xl">0</span>
-            </div>
-          </div>
-          <div className="text-center">
-            <div className="bg-white rounded-full w-12 h-6 flex items-center justify-center mb-2">
-              <span className="text-xl">0</span>
-            </div>
-            <div className="flex justify-center space-x-1">
-              <span className="text-xl">0</span>
-              <span className="text-xl">0</span>
-              <span className="text-xl">1</span>
-            </div>
-          </div>
-          <div className="text-center">
-            <div className="bg-white rounded-full w-12 h-6 flex items-center justify-center mb-2">
-              <span className="text-xl">0</span>
-            </div>
-            <div className="flex justify-center space-x-1">
-              <span className="text-xl">0</span>
-              <span className="text-xl">1</span>
-              <span className="text-xl">0</span>
-            </div>
-          </div>
-          <div className="text-center">
-            <div className="bg-white rounded-full w-12 h-6 flex items-center justify-center mb-2">
-              <span className="text-xl">1</span>
-            </div>
-            <div className="flex justify-center space-x-1">
-              <span className="text-xl">0</span>
-              <span className="text-xl">1</span>
-              <span className="text-xl">1</span>
-            </div>
-          </div>
-
-          <div className="text-center">
-            <div className="bg-white rounded-full w-12 h-6 flex items-center justify-center mb-2">
-              <span className="text-xl">1</span>
-            </div>
-            <div className="flex justify-center space-x-1">
-              <span className="text-xl">1</span>
-              <span className="text-xl">0</span>
-              <span className="text-xl">0</span>
-            </div>
-          </div>
-          <div className="text-center">
-            <div className="bg-white rounded-full w-12 h-6 flex items-center justify-center mb-2">
-              <span className="text-xl">1</span>
-            </div>
-            <div className="flex justify-center space-x-1">
-              <span className="text-xl">1</span>
-              <span className="text-xl">0</span>
-              <span className="text-xl">1</span>
-            </div>
-          </div>
-          <div className="text-center">
-            <div className="bg-white rounded-full w-12 h-6 flex items-center justify-center mb-2">
-              <span className="text-xl">1</span>
-            </div>
-            <div className="flex justify-center space-x-1">
-              <span className="text-xl">1</span>
-              <span className="text-xl">1</span>
-              <span className="text-xl">0</span>
-            </div>
-          </div>
-          <div className="text-center">
-            <div className="bg-white rounded-full w-12 h-6 flex items-center justify-center mb-2">
-              <span className="text-xl">0</span>
-            </div>
-            <div className="flex justify-center space-x-1">
-              <span className="text-xl">1</span>
-              <span className="text-xl">1</span>
-              <span className="text-xl">1</span>
-            </div>
-          </div>
-        </div>
-        <p className="mt-4 text-sm text-gray-600">
-          Cada celda en la nueva fila se determina basándose en su estado actual y los estados de sus vecinos izquierdo y derecho.
-          Las combinaciones que resultan en 1 están marcadas con círculos negros en el canvas.
-        </p>
-      </div>
+      <Rule30Rules />
 
       <div className="mb-4">
         <label htmlFor="iterations" className="block text-sm font-medium mb-1">
@@ -182,7 +94,7 @@ function App() {
           value={iterations}
           onChange={(e) => setIterations(Number(e.target.value))}
           min="1"
-          max="1000"
+          max="10000"
           className="w-32 p-2 border rounded"
         />
       </div>
