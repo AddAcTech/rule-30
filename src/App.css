@@ -1,0 +1,64 @@
+.container {
+  max-width: 800px;
+}
+
+.canvas-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  overflow-x: auto;
+  background-color: #909090;
+  display: flex;
+  justify-content: center;
+}
+
+#rule30-canvas {
+  margin: 0 auto;
+}
+
+#rule30-canvas {
+  background-color: #909090;
+  position: relative;
+  display: block;
+}
+
+#rule30-canvas::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background-color: #87CEEB;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+input[type="number"] {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100px;
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border-color: #000;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.central-column {
+  background-color: #f3f4f6;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
